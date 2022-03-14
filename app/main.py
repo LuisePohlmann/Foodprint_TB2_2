@@ -43,7 +43,7 @@ def signup():
 def home():
     thisweek = App.totals()
     form = AddFoodForm()
-    return render_template("home.html", thisweek_CO2 = thisweek["CO2"], thisweek_water = thisweek["water"], thisweek_plastic = thisweek["plastic"], form = form)
+    return render_template("home.html", thisweek_CO2 = round(thisweek["CO2"],2), thisweek_water = round(thisweek["water"],2), thisweek_plastic = round(thisweek["plastic"],2), form = form)
 
 @main.route("/Add_Food", methods=["POST", "GET"])
 def add_food():
